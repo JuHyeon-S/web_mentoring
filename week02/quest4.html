@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      form{
+        width: fit-content;
+        border: 1px solid;
+        padding: 10px;
+        background-color: rgb(240, 238, 238);
+      }
+      input{
+        border-radius: 2px;
+      }
+      #submit{
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>회원가입</h2>
+    <hr>
+    <form>
+      <table>
+        <tr>
+          <td>이메일</td>
+          <td><input type="text" class="inp" onfocus="focusIn(this)" onblur="focusOut(this)"></td>
+        </tr>
+        <tr>
+          <td>비밀번호</td>
+          <td><input type="password" class="inp" id="pw" onfocus="focusIn(this)" onblur="focusOut(this)"></td>
+        </tr>
+        <tr>
+          <td>비밀번호 확인</td>
+          <td><input type="password" class="inp" id="pwc" onfocus="focusIn(this)" onblur="focusOut(this)"></td>
+        </tr>
+        <tr>
+          <td>이름</td>
+          <td><input type="text" class="inp" onfocus="focusIn(this)" onblur="focusOut(this)"></td>
+        </tr>
+        <tr>
+          <td>나이</td>
+          <td><input type="text" class="inp" id="age" onfocus="focusIn(this)" onblur="focusOut(this)"></td>
+        </tr>
+        <tr>
+          <td>성별</td>
+          <td style="float: right;">
+            <input type="radio" name="sex" value="man">남 &nbsp;&nbsp;
+            <input type="radio" name="sex" value="woman">여
+          </td>
+        </tr>
+      </table>
+      <div id="submit">
+        <input type="submit" onclick="Check()">
+      </div>
+    </form>
+
+    <script>
+      function focusIn(obj){
+        obj.style.backgroundColor = "rgb(217, 232, 255)";
+      }
+      function focusOut(obj){
+        obj.style.backgroundColor = "white";
+      }
+      function Check(){
+        var pw = document.getElementById("pw").value;
+        var pwc = document.getElementById("pwc").value;
+        if(pw != pwc){
+          alert("비밀번호가 일치하지 않습니다.");
+        }
+
+        var age = document.getElementById("age");
+        if(age.value < 99 && age.value > 1){ 
+          pass;
+        }
+        else{
+          alert("나이가 올바르지 않습니다. (1~99 사이로 입력)")
+        }
+      }
+    </script>
+  </body>
+</html>
